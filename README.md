@@ -5,4 +5,4 @@
 <h1>JS Mini Project</h1>
 <font>This Web App is connected to other webpages that have more Game Options</font>
 <h2>REMINDER!!!</h2>
-<font font-color="red">index.html files is the root of all the files</font>
+<font color="red">index.html files is the root of all the files</font>
