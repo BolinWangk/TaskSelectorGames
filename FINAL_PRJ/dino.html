@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dino Run Game</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: #f4f4f4;
+      font-family: sans-serif;
+    }
+    canvas {
+      background: #fff;
+      display: block;
+      margin: 0 auto;
+      border: 2px solid #000;
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="gameCanvas" width="800" height="200"></canvas>
+
+<script>
+const canvas = document.getElementById('gameCanvas');
+const ctx = canvas.getContext('2d');
+
+let dino = {
+  x: 50,
+  y: 150,
+  width: 40,
+  height: 40,
+  vy: 0,
+  gravity: 2,
+  jumpPower: -30,
+  isJumping: false
+};
+
+let obstacle = {
+  x: 800,
+  y: 160,
+  width: 20,
+  height: 40,
+  speed: 10
+};
+
+let score = 0;
+let gameOver = false;
+
+function drawDino() {
+  ctx.fillStyle = '#444';
+  ctx.fillRect(dino.x, dino.y, dino.width, dino.height);
+}
+
+function drawObstacle() {
+  ctx.fillStyle = '#000';
+  ctx.fillRect(obstacle.x, obstacle.y, obstacle.width, obstacle.height);
+}
+
+function drawScore() {
+  ctx.fillStyle = '#000';
+  ctx.font = '20px Arial';
+  ctx.fillText(`Score: ${score}`, 10, 30);
+}
+
+function update() {
+  if (gameOver) return;
+
+  dino.y += dino.vy;
+  dino.vy += dino.gravity;
+
+  if (dino.y > 150) {
+    dino.y = 150;
+    dino.isJumping = false;
+    dino.vy = 0;
+  }
+
+  obstacle.x -= obstacle.speed;
+
+  if (obstacle.x + obstacle.width < 0) {
+    obstacle.x = 800;
+    score++;
+  }
+
+  // Collision detection
+  if (
+    dino.x < obstacle.x + obstacle.width &&
+    dino.x + dino.width > obstacle.x &&
+    dino.y < obstacle.y + obstacle.height &&
+    dino.y + dino.height > obstacle.y
+  ) {
+    gameOver = true;
+    alert('Game Over! Your score: ' + score);
+    document.location.reload();
+  }
+}
+
+function draw() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  drawDino();
+  drawObstacle();
+  drawScore();
+}
+
+function gameLoop() {
+  update();
+  draw();
+  if (!gameOver) requestAnimationFrame(gameLoop);
+}
+
+document.addEventListener('keydown', (e) => {
+  if (e.code === 'Space' && !dino.isJumping) {
+    dino.vy = dino.jumpPower;
+    dino.isJumping = true;
+  }
+});
+gameLoop();
+
+</script>
+<br>
+<a href="index1.html"><button>BACK TO MENU</button></a><br>
+
+</body>
+</html>

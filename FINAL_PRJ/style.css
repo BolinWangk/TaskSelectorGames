@@ -1,0 +1,108 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #c3ecf9, #f9d5ec);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image:url(priojectW.jpg) ;
+    background-repeat: no-repeat;
+    background-size: 1900px;
+
+  }
+
+  
+  h1 {
+    font-size: 40px;
+    color: #a2da20;
+    text-shadow: 2px 2px 3px #aaa;
+  }
+  
+  h1:hover{
+    color: #6b69a7;
+ 
+   }
+  
+  .task-container {
+    background: rgba(125, 132, 114, 0.641);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(79, 183, 13, 0.1);
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .input-group {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  
+  input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: 5px solid #4a4a6d;
+    border-radius: 10px;
+    outline: none;
+    font-size: 25px;
+  }
+  
+  button {
+    background-color: #b8cfd0;
+    color: rgb(0, 0, 0);
+    border: none;
+    margin-left: 10px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bolder;
+    transition: background-color 0.2s;
+  }
+  
+  button:hover {
+    background-color: #7374ca;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 10px;
+    background-color: #b4a9a9;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  
+  .remove-btn {
+    background-color: #8840a0;
+  }
+  
+  .remove-btn:hover {
+    background-color: #e60000;
+  }
+  
+  #random-task-display {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 15px;
+    background-color: #fff8c5;
+    box-shadow: 0 0 20px #ffd700;
+    font-size: 40px;
+    text-align: center;
+    display: none;
+    font-family:"Gill Sans",sans-serif;
+  }
+
+
+  img{
+    width: 110px;
+    height: 70px;  
+  }
+  

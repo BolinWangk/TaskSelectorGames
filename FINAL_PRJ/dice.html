@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>4 Dice Roller</title>
+  <style>
+    body {
+      background-color: #222;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 50px;
+    }
+
+    .dice-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .dice {
+      font-size: 60px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      cursor: pointer;
+      border: none;
+      background-color: #0f0;
+      color: #000;
+      border-radius: 8px;
+      transition: background-color 0.2s;
+    }
+
+    button:hover {
+      background-color: #0c0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Roll 4 Dice 🎲</h1>
+  <button onclick="rollDice()">Roll Dice</button>
+  <div class="dice-container" id="diceContainer">
+    <div class="dice">🎲</div>
+    <div class="dice">🎲</div>
+    <div class="dice">🎲</div>
+    <div class="dice">🎲</div>
+  </div>
+
+  <script>
+    const diceFaces = ["⚀", "⚁", "⚂", "⚃", "⚄", "⚅"];
+
+    function rollDice() {
+      const container = document.getElementById("diceContainer");
+      const dice = container.children;
+      for (let i = 0; i < dice.length; i++) {
+        const roll = Math.floor(Math.random() * 6);
+        dice[i].textContent = diceFaces[roll];
+      }
+    }
+  </script>
+  <br>
+      <a href="index1.html"><button>BACK TO MENU</button></a><br>
+
+</body>
+</html>
