@@ -2,3 +2,4 @@
 
 
 <h1>JS Mini Project</h1>
+<font>This Web App is connected to other webpages that have more Game Options</font>
